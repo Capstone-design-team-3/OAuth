@@ -1,1 +1,1 @@
-# OAuth
+# OAuth 2.0
