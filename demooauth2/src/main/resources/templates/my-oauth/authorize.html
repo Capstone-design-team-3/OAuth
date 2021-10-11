@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    }
+</style>
+<body>
+<div class="container">
+    <form role="form" action="/my-oauth/authorize" th:object="${form}"
+          method="post">
+        <div class="form-group">
+            <label>클라이언트 아이디</label>
+            <input type="text" th:field="*{client_id}" class="form-control" placeholder="client_id 입력하세요">
+        </div>
+        <div class="form-group">
+            <label>리다이렉트 URI</label>
+            <input type="text" th:field="*{redirect_uri}" class="form-control" placeholder="redirect_uri 입력하세요">
+        </div>
+        <div class="form-group">
+            <label>리스폰스 타입</label>
+            <input type="text" th:field="*{response_type}" class="form-control" placeholder="response_type 입력하세요">
+        </div>
+        <div class="form-group">
+            <label>스코프</label>
+            <input type="text" th:field="*{scope}" class="form-control" placeholder="SCOPE 입력하세요">
+        </div>
+        <button type="submit" class="btn btn-primary" formaction="/oauth/authorize">Default Page Submit</button>
+        <button type="submit" class="btn btn-primary" formaction="/my-oauth/authorize">Custom Page Submit</button>
+
+    </form>
+    <br/>
+</div> <!-- /container -->
+</body>
+</html>

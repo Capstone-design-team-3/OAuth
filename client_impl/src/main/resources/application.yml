@@ -2,6 +2,9 @@ logging:
   level:
     root: info
     com.oauth.oauth: debug
+    org:
+      springframework:
+        security: DEBUG
 
 server:
   port: 8080
